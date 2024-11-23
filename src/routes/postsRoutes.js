@@ -1,6 +1,6 @@
 import express from "express";
 import multer from "multer";
-import cors from cors;
+import cors from "cors";
 import { listarPosts, postarNovoPost, uploadImagem, atualizarPosts} from "../controllers/postsController.js";
 
 const corsOption = {
@@ -25,7 +25,7 @@ const routes = (app) => {
     // Permite que o servidor interprete requisições
     app.use(express.json());
 
-    app.use(cors(corsOption))
+    app.use(cors(corsOption));
     
     // Rota para buscar todos os posts    
     app.get("/posts", listarPosts);
