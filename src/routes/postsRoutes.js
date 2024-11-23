@@ -4,7 +4,7 @@ import cors from "cors";
 import { listarPosts, postarNovoPost, uploadImagem, atualizarPosts} from "../controllers/postsController.js";
 
 const corsOption = {
-    origin: "http://localhost:8000",
+    origin: "http://127.0.0.1:8000",
     optionsSucessStatus:200
 }
 
@@ -22,10 +22,10 @@ const upload = multer({dest:"./uploads", storage});
 
 
 const routes = (app) => {
+    app.use(cors(corsOption));
+
     // Permite que o servidor interprete requisições
     app.use(express.json());
-
-    app.use(cors(corsOption));
     
     // Rota para buscar todos os posts    
     app.get("/posts", listarPosts);
