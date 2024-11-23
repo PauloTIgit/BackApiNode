@@ -1,0 +1,3 @@
+STRING_CONEXAO = "mongodb+srv://{USER}:{PASS}@cluster0.gilc2.mongodb.net/?retryWrites=true&w=majority&appName={cluster}"
+
+GEMINI_API_KEY = "{KEY}"
